@@ -1,0 +1,50 @@
+html {
+    background: linear-gradient(rgb(77, 77, 141), rgb(173, 62, 62));
+}
+
+.showBlog {
+    background-color: sandybrown;
+    color: white;
+    padding: 5rem;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    h1 {
+        padding: 1rem;
+        border: solid 2px white;
+    }
+    .content {
+        border: 2px solid blue;
+        box-shadow: 2px 4px 4px black;
+        color: white;
+        background-color: purple;
+        font-size: 20pt;
+    }
+    button {
+        padding: 1vmin;
+        margin: 2rem;
+        background-color: sandybrown;
+        color: purple;
+        box-shadow: 2px 4px 4px black;
+    }
+    button:hover {
+        box-shadow: none;
+        cursor: grab;
+        color: sandybrown;
+        background-color: purple;
+        border: solid 2px white;
+    }
+
+    .link {
+        text-decoration: none;
+        color: white;
+        background-color: sandybrown;
+        font-size: 20pt;
+        padding: 1rem;
+        border: solid 2px white;
+    }
+
+}

@@ -1,6 +1,17 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .heading {
     font-size: 2rem;
-    color: purple;
+    color: white;
+    background-color: purple;
+    border-radius: 5%;
+    padding: 2rem;
 }
 
 .form {
@@ -8,4 +19,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: sandybrown;
+    border-radius: 5%;
+    padding: 2rem;
+}
+
+.input {
+    background-color: white;
+    padding: 1vmin;
+    margin: 1rem;
+    border-radius: 5%;
+}
+.submit {
+    background-color: blue;
+    color: white;
+    font-size: 18pt;
+    width: fit-content;
+    box-shadow: 2px 3px 3px black;
+}
+
+.submit:hover {
+    background-color: white;
+    color: blue;
+    box-shadow: none;
 }

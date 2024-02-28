@@ -1,0 +1,25 @@
+.update {
+    border: 5px solid red;
+    background-color: sandybrown;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    .input {
+        padding: 1vmin;
+        margin: 5px;
+        border-radius: 5%;
+        background-color: lightblue;
+        color: black;
+    }
+    .submit {
+        color: white;
+        background-color: blue;
+        box-shadow: 2px 3px 5px black;
+    }
+    .submit:hover {
+        box-shadow: none;
+        cursor: grab;
+        color: blue;
+        background-color: white;
+    }
+}

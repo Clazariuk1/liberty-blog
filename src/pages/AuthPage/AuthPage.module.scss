@@ -1,0 +1,32 @@
+.authPage {
+    background-color: white;
+    border: solid 2px red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button {
+    background-color: sandybrown;
+    color: white;
+    padding: 1vmin;
+    margin: 1rem;
+    box-shadow: 2px 3px 4px black;
+}
+
+.button:hover {
+    background-color: white;
+    color: sandybrown;
+    cursor:grab;
+    box-shadow: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

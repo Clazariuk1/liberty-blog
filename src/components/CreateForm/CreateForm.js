@@ -1,5 +1,6 @@
 import {useState} from 'react'
-
+import  { useNavigate } from 'react-router-dom'
+import styles from './CreateForm.module.scss'
 
 export default function CreateForm(props) {
     const [ formData, setFormData ] = useState({
@@ -7,11 +8,13 @@ export default function CreateForm(props) {
         body: ''
     })
 
+    const navigateTo = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await props.createBlog(formData, props.token)
+            const data = await props.createBlog(formData, props.token)
             // cool thing to do once there is a showpage done
+            navigateTo(`/blog/${data._id}`)
         } catch (error) {
             console.error(error)
         }
@@ -22,11 +25,11 @@ export default function CreateForm(props) {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <h2>Create A New BlogPost {props.user.name} </h2>
-            <input placeholder='Title' type="text" name="title" value={formData.title} onChange={handleChange}/>
-            <input placeholder='BODY' type="text" name="body" value={formData.body} onChange={handleChange}/>
-            <input type="submit" value="Create Blog"/>
+        <form className={styles.createForm}onSubmit={handleSubmit}>
+            <h2>Create A New BlogPost, {props.user.name}! </h2>
+            <input className={styles.input} placeholder='Title' type="text" name="title" value={formData.title} onChange={handleChange}/>
+            <input className={styles.input} placeholder='BODY' type="text" name="body" value={formData.body} onChange={handleChange}/>
+            <input className={styles.submit} type="submit" value="Create Blog"/>
         </form>
     )
 

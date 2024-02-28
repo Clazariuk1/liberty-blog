@@ -24,7 +24,7 @@ export default function App(){
            localStorage.setItem('token', data.token)
            localStorage.setItem('user', JSON.stringify(data.user))
         } catch (error) {
-           console.error(error) 
+           console.error(error)
         }
     }
     // this function will need to be a prop passed to the LoginForm via AuthPage
@@ -42,7 +42,7 @@ export default function App(){
         })
         const data = await response.json()
         // Step 3
-        const tokenData = data.token 
+        const tokenData = data.token
         localStorage.setItem('token', tokenData)
         setToken(tokenData)
         // the below code is additional to the core features of authentication
@@ -53,7 +53,7 @@ export default function App(){
         setUser(userData)
         } catch (error) {
             console.error(error)
-        }    
+        }
     }
 
     // Create we need token authentication in order to verify that someone can make a blog
@@ -90,14 +90,14 @@ export default function App(){
         } catch (error) {
             console.error(error)
         }
-    } 
+    }
     const getIndividualBlog = async (id) => {
         try {
             const response = await fetch(`/api/blogs/${id}`)
             const data = await response.json()
             return data
         } catch (error) {
-            console.error(error) 
+            console.error(error)
         }
     }
     // Update
@@ -153,30 +153,31 @@ export default function App(){
                Create an individual Blogs
             */}
             <Routes>
-                <Route path="/" 
+                <Route path="/"
                 element={
-                <HomePage 
-                    user={user} 
-                    token={token} 
+                <HomePage
+                    user={user}
+                    token={token}
                     setToken={setToken}
                     setUser={setUser}
                     getAllBlogs={getAllBlogs}
                     createBlog={createBlog}
                 />}></Route>
-                <Route path="/register" 
+                <Route path="/register"
                 element={
-                <AuthPage 
-                    setUser={setUser} 
-                    setToken={setToken} 
+                <AuthPage
+                    setUser={setUser}
+                    setToken={setToken}
                     signUp={signUp}
                     login={login}
                 />}></Route>
-                <Route path="/blog" 
+                <Route path="/blog/:id"
                 element={
-                <ShowPage 
-                    user={user} 
-                    token={token} 
+                <ShowPage
+                    user={user}
+                    token={token}
                     setToken={setToken}
+                    setUser={setUser}
                     getIndividualBlog={getIndividualBlog}
                     deleteBlog={deleteBlog}
                     updateBlog={updateBlog}

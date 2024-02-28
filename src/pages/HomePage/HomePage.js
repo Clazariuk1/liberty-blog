@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import CreateForm from '../../components/CreateForm/CreateForm'
 import Blogs from '../../components/Blogs/Blogs'
+import styles from './HomePage.module.scss'
 
 export default function HomePage (props){
     const [blogs, setBlogs] = useState([])
@@ -10,7 +11,7 @@ export default function HomePage (props){
         const fetchBlogs = async () => {
             try {
                const data = await props.getAllBlogs()
-               setBlogs(data) 
+               setBlogs(data)
             } catch (error) {
                 console.error(error)
             }
@@ -29,7 +30,7 @@ export default function HomePage (props){
     }, [])
 
     return(
-        <div>
+        <div className={styles.homepage}>
             <h1>Welcome to the Liberty Blog</h1>
             { showCreate? <CreateForm user={props.user} createBlog={props.createBlog} token={props.token}/> : <></> }
             { blogs.length? <Blogs blogs={blogs}/> : 'Sorry our writers are lazy' }

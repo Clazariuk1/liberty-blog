@@ -1,3 +1,7 @@
+.content {
+    text-align: center;
+}
+
 .heading {
     font-size: 2rem;
     color: pink;
@@ -8,4 +12,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: sandybrown;
+    border-radius: 5%;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.input {
+    background-color: lightgray;
+    padding: 1vmin;
+    margin: 5px;
+    border-radius: 5%;
+}
+
+.submit {
+    background-color: blue;
+    color: white;
+    font-size: 18pt;
+    width: fit-content;
+}
+
+.submit:hover {
+    background-color: white;
+    color: blue;
+    box-shadow: none;
 }

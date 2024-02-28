@@ -13,19 +13,20 @@ export default function SignUpForm (props){
     }
     return(
         <>
+        <div className={styles.content}>
             <h2 className={styles.heading}>Sign Up For My Dope Blog Below</h2>
-            <form 
-                className={styles.form} 
+            <form
+                className={styles.form}
                 onSubmit={(e) => {
                 e.preventDefault()
                 props.signUp(credentials)
             }}>
-                <input type='text' name="name" onChange={handleChange} value={credentials.name} />
-                <input type='email' name="email" onChange={handleChange} value={credentials.email} />
-                <input type='password' name="password" onChange={handleChange} value={credentials.password} />
-                <input type="submit" value="Submit" />
+                <input className={styles.input} type='text' name="name" onChange={handleChange} value={credentials.name} />
+                <input className={styles.input} type='email' name="email" onChange={handleChange} value={credentials.email} />
+                <input className={styles.input} type='password' name="password" onChange={handleChange} value={credentials.password} />
+                <input className={styles.submit} type="submit" value="Submit" />
             </form>
-
+            </div>
         </>
     )
-   } 
+   }
